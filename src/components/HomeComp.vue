@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       amount: null,
-      movements: [{
+      movs: [{
         id: 0,
         title: "Movimiento",
         amount: 1000
