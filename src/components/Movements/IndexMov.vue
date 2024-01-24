@@ -3,9 +3,13 @@
       <h2 class="title">Historial</h2>
       <div class="content">
           <MovesComp
-              v-for="ar in movements" 
-              :key="ar.id"
-              :title="ar.title"
+              v-for="{id, title, description, amount} in movements" 
+              :key="id"
+              :id="id" 
+              :title="title"
+              :description="description"
+              :amount="amount"
+              @borrar="borrar"
           /><!-- ar es una variable para recorrer -->
       </div>
   </div>
@@ -23,6 +27,10 @@ const props = defineProps({
 });
 
 const { movements } = toRefs(props);
+
+const borrar = (e) => {
+  console.log("remove",id)
+}
 </script>
 
 <style scoped>
