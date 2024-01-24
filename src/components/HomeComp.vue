@@ -10,7 +10,7 @@
       </Resume>
     </template>
     <template #movements>
-      <Movements />
+      <Movements :movements="movs"/>
     </template>
   </LayoutComp>
 </template>
@@ -30,6 +30,20 @@ export default {
   data() {
     return {
       amount: null,
+      movements: [{
+        id: 0,
+        title: "Movimiento",
+        amount: 1000
+      },{
+        id: 1,
+        title: "Paga",
+        amount: 2400
+      },{
+        id: 2,
+        title: "HAYSGHA",
+        amount: 1400
+      }
+    ]
     };
   },
 };

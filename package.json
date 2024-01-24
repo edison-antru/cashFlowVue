@@ -13,23 +13,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.20.1",
-    "prettier": "^2.4.1"
-  },"eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "plugin:vue/recommended"
-    ]
+    "prettier": "^2.4.1",
+    "typescript": "^5.3.3"
   }
 }
