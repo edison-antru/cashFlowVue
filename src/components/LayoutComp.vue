@@ -19,7 +19,7 @@
 import { ref } from "vue";
 
 const showMovements = ref(false);
-</script>
+</script> 
 
 <style scoped>
 .header,

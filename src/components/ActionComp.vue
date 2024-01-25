@@ -2,8 +2,52 @@
     <button @click="showModal = true">
         Agregar movimiento
     </button>
-    <teleport></teleport>
+    <teleport to="#app">
+      <ModalComp v-show="showModal" @close="showModal=false">
+        <form @submit.prevent="submit">
+          <div class="field">
+            <label>Título</label>
+            <input type="text" v-model="title">
+          </div>
+          <div class="field">
+            <label>Monto</label>
+            <input type="number" v-model="amount">
+          </div>
+          <div class="field">
+            <label>Description</label>
+            <textarea rows="4" v-model="description"></textarea>
+          </div>
+          <div class="field">
+            <label>Tipo de movimiento: </label>
+            <label class="radio-label">
+              <input type="radio" v-model="movementType" value="Ingreso">
+              <span>Ingreso</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" v-model="movementType" value="Gasto">
+              <span>Gasto</span>
+            </label>
+          </div>
+          <div  class="action">
+            <button>Agregar movimiento</button>
+          </div>
+        </form>
+      </ModalComp>
+    </teleport>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import ModalComp from "./ModalComp.vue"
+ 
+const showModal = ref(false);
+const title = ref("");
+const amount = ref(0);
+const description = ref("");
+const movementType = ref("INgreso");
+
+const submit =( () => showModal.value = false)
+</script>
 
 <style scoped>
 button {
@@ -12,7 +56,7 @@ button {
   background-color: var(--brand-blue);
   border: none;
   width: 100%;
-  padding: 24px 60px;
+  padding: 12px 60px;
   border-radius: 60px;
   box-sizing: border-box;
 }
