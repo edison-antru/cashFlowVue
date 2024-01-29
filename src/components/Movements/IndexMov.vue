@@ -9,14 +9,14 @@
               :title="title"
               :description="description"
               :amount="amount"
-              @borrar="borrar"
+              @remove="remove"
           /><!-- ar es una variable para recorrer -->
       </div>
   </div>
 </template>
 
 <script setup>
-import { toRefs, defineProps } from 'vue';
+import { toRefs, defineProps, defineEmits} from 'vue';
 import MovesComp from "./MovesComp.vue";
 
 const props = defineProps({
@@ -28,9 +28,11 @@ const props = defineProps({
 
 const { movements } = toRefs(props);
 
-const borrar = (e) => {
-  console.log("remove",id)
-}
+const emit = defineEmits(["remove"]);
+
+const remove = (id) => {
+  emit("remove", id);
+};
 </script>
 
 <style scoped>

@@ -12,14 +12,14 @@
           <GraphicComp :amounts="amounts"></GraphicComp>
         </template>
         <template #action>
-          <ActionComp @create="create"/>
+          <ActionComp @create="create" />
         </template>
       </Resume>
     </template>
 
     <!-- List movements -->
     <template #movements>
-      <Movements :movements="movs"/>
+      <Movements :movements="movements" @remove="remove"/>
     </template>
 
   </LayoutComp>
@@ -46,7 +46,7 @@ export default {
       amount: null,
       label: null,
       totalamount: "1000000",
-      movs: [{
+      movements: [{
         id: 0,
         title: "Movimiento",
         description: "Antes de ganar casinl",
@@ -112,7 +112,7 @@ export default {
   },
   computed : {
     amounts() {
-      const lastDays = this.movs
+      const lastDays = this.movements
         .filter( m => {
           const today = new Date();
           const oldDate = today.setDate(today.getDate() - 30);
@@ -133,8 +133,12 @@ export default {
   },
   methods: {
     create(movement) {
-      this.movs.push(movement)
-    }
+      this.movements.push(movement)
+    },  
+    remove(id) {
+      const index = this.movements.findIndex(m => m.id === id);
+      this.movements.splice(index, 1);
+}
   }
 };
 </script>

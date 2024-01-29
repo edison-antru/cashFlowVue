@@ -55,7 +55,7 @@ const movementType = ref("Ingreso");
 
 const emit = defineEmits(["create"])
 
-const submit =( () => {
+const submit = (() => {
     showModal.value = false;
     emit("create", {
       title: title.value,

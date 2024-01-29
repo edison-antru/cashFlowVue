@@ -36,7 +36,7 @@ export default {
     },
 
     labelVisual() {
-      return this.amount !== null ? this.label : "monto totaaaal";
+      return this.amount !== null ? this.label : "MONTO TOTAL :";
     },
     amountCurrency() {
       return currencyFormater.format(this.amountVisual);
@@ -70,7 +70,7 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 48px 24px;
+  padding: 10px 24px;
   box-sizing: border-box;
 }
 </style>
